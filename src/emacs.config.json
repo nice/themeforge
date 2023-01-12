@@ -1,0 +1,14 @@
+[
+  {
+    "type": "face",
+    "face": "default",
+    "background": "editor.background",
+    "foreground": "editor.foreground",
+    "fontStyle": "comment"
+  },
+  {
+    "type": "face",
+    "face": "cursor",
+    "foreground": "editorCursor.foreground"
+  }
+]

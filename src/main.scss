@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+$primary: #2787cb;
+$info: #cfebf6;
+$link: #14568a;
+$dark: #464646;
+
+@import "bulma/bulma";
+
+.textarea {
+  min-height: 14em !important;
+}
+

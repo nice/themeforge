@@ -1,0 +1,1 @@
+!function(){"use strict";document.body.innerHTML="\n    <h1>Hello webpack</h1>\n  "}();
