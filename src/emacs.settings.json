@@ -1,13 +1,13 @@
 [
   {
     "type": "comment",
-    "description": "basic faces"
+    "description": "BASIC FACES"
   },
   {
     "type": "face",
     "face": "default",
-    "background": ["vscode#editor.background"],
     "foreground": ["vscode#editor.foreground"],
+    "background": ["vscode#editor.background"],
     "fontStyle": null
   },
   {
@@ -196,7 +196,7 @@
   {
     "type": "face",
     "face": "font-lock-constant-face",
-    "foreground": ["vscode#constant.language"],
+    "foreground": ["vscode#constant", "vscode#constant.language"],
     "background": [],
     "fontStyle": "vscode#constant.language"
   },
@@ -322,7 +322,11 @@
   },
   {
     "type": "comment",
-    "description": "doom modeline"
+    "description": "THIRD PARTY PACKAGE FACES"
+  },
+  {
+    "type": "comment",
+    "description": "doom-modeline-mode"
   },
   {
     "type": "face",
@@ -339,17 +343,64 @@
     "fontStyle": null
   },
   {
+    "type": "comment",
+    "description": "web-mode"
+  },
+  {
     "type": "face",
-    "face": "widget-field",
+    "face": "web-mode-string-face",
     "background": [],
-    "foreground": [],
+    "foreground": ["emacs#font-lock-string-face.foreground"],
     "fontStyle": null
   },
   {
     "type": "face",
-    "face": "widget-field",
+    "face": "web-mode-html-tag-face",
     "background": [],
-    "foreground": [],
+    "foreground": ["emacs#font-lock-keyword-face.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "web-mode-html-tag-bracket-face",
+    "background": [],
+    "foreground": ["emacs#web-mode-html-tag-face.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "web-mode-html-attr-name-face",
+    "background": [],
+    "foreground": ["emacs#font-lock-type-face.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "comment",
+    "description": "company-mode"
+  },
+  {
+    "type": "face",
+    "face": "company-tooltip",
+    "background": ["emacs#default.background|adjust:15"],
+    "foreground": ["emacs#default.foreground|adjust:15"],
+    "fontStyle": null
+  },
+  {
+    "type": "comment",
+    "description": "org-mode"
+  },
+  {
+    "type": "face",
+    "face": "org-block",
+    "background": ["emacs#default.background|adjust:11"],
+    "foreground": ["emacs#default.foreground|adjust:11"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "org-block-begin-line",
+    "background": [],
+    "foreground": ["emacs#font-lock-comment-face.foreground"],
     "fontStyle": null
   }
 ]

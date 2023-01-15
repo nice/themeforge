@@ -125,8 +125,6 @@ class Emacs {
 
     // resolve and apply actions
     toRender.forEach((item) => {
-			console.log(item)
-			console.log(this.editorScope)
       if (item.type === "face") {
         if (!item.background.resolved) {
           let [prefix, suffix] = item.background.resolution.split(".");
@@ -259,7 +257,6 @@ class Emacs {
       atom = match[2];
       atomAction = match[3];
       atomArgument = match[4];
-      // console.log(atom, atomAction, atomArgument);
 
       // Emacs flow
       if (editor === "emacs") {
