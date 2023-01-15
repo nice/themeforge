@@ -8,18 +8,26 @@ function getLicense() {
   return license;
 }
 
-function getOverrides(cleanThemeName) {
+function getHeader(that) {
+  return `\n(deftheme ${that.cleanThemeName} "A nice ${that.themeType} theme.")\n\n`;
+}
+
+function getFooter() {
+  return ")"; // to offset let parens
+}
+
+function getOverrides(that) {
   return `
 
 
 (custom-theme-set-variables
-  '${cleanThemeName}
+  '${that.cleanThemeName}
   '(linum-format " %3i "))
 
 `;
 }
 
-function getLoaders(cleanThemeName) {
+function getLoaders(that) {
   return `
 ;;;###autoload
 (when load-file-name
@@ -28,13 +36,13 @@ function getLoaders(cleanThemeName) {
 
 
 ;;;###autoload
-(defun ${cleanThemeName}-theme()
-  "Apply the ${cleanThemeName}-theme."
+(defun ${that.cleanThemeName}-theme()
+  "Apply the ${that.cleanThemeName}-theme."
   (interactive)
-  (load-theme '${cleanThemeName} t))
+  (load-theme '${that.cleanThemeName} t))
 
 
-(provide-theme '${cleanThemeName})
+(provide-theme '${that.cleanThemeName})
 
 
 ;; Local Variables:
@@ -44,4 +52,4 @@ function getLoaders(cleanThemeName) {
 `;
 }
 
-export { getLicense, getLoaders, getOverrides };
+export { getLicense, getLoaders, getOverrides, getHeader, getFooter };

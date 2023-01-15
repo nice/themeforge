@@ -99,6 +99,7 @@ function fooshadeColor(color, percent) {
   return "#" + RR + GG + BB;
 }
 
+/* Credits: https://stackoverflow.com/a/62640342/2102830 */
 const colorShade = (col, amt) => {
   // empty color check
   if (col === "") return col;
@@ -124,4 +125,5 @@ const colorShade = (col, amt) => {
 
   return `#${rr}${gg}${bb}`;
 };
+
 export { getJson, parseTheme, cleanString, colorShade as shadeColor };
