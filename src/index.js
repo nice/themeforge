@@ -9,9 +9,10 @@ function handleSubmit(e) {
   if (!err) {
     console.time("foo");
     const emacs = new Emacs(json);
-    let {themeData, colorMap} = emacs.convert();
-    document.querySelector("pre").innerText = themeData;
-    console.log(colorMap);
+    let { themeData, colorMap } = emacs.convert();
+    document.querySelector("#output").innerHTML = themeData;
+    // console.log(colorMap);
+    emacs.log();
   } else {
     console.log("Invalid json");
   }
@@ -20,3 +21,4 @@ function handleSubmit(e) {
 }
 
 document.querySelector("#input-form").addEventListener("submit", handleSubmit);
+document.addEventListener("DOMContentLoaded", handleSubmit)

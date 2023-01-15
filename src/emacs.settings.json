@@ -1,0 +1,149 @@
+[
+  {
+    "type": "comment",
+    "description": "basic faces"
+  },
+  {
+    "type": "face",
+    "face": "default",
+    "background": ["vscode#editor.background"],
+    "foreground": ["vscode#editor.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "line-number",
+    "background": [],
+    "foreground": ["vscode#string"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "line-number-current-line",
+    "background": [],
+    "foreground": ["vscode#string"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "hl-line",
+    "background": ["emacs#default.background|adjust:20"],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "cursor",
+    "foreground": ["vscode#editorCursor.foreground"],
+    "background": ["vscode#editorCursor.background"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "region",
+    "foreground": [],
+    "background": [
+      "vscode#editor.selectionBackground",
+      "emacs#default.background|adjust:45"
+    ],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "secondary-selection",
+    "foreground": [],
+    "background": [
+      "vscode#editor.inactiveSelectionBackground",
+      "emacs#default.background|adjust:25"
+    ],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "fringe",
+    "foreground": [],
+    "background": ["vscode#editor.background"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "mode-line",
+    "foreground": ["vscode#statusBar.foreground"],
+    "background": ["vscode#statusBar.background"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "minibuffer-prompt",
+    "foreground": [
+      "vscode#commandCenter.foreground",
+      "vscode#tab.activeForeground"
+    ],
+    "background": [
+      "vscode#commandCenter.background",
+      "vscode#tab.activeBackground"
+    ],
+    "fontStyle": null
+  },
+  {
+    "type": "comment",
+    "description": "font lock faces"
+  },
+
+  {
+    "type": "face",
+    "face": "font-lock-keyword-face",
+    "background": [],
+    "foreground": ["vscode#keyword"],
+    "fontStyle": "vscode#keyword"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-comment-face",
+    "foreground": ["vscode#comment"],
+    "background": [],
+    "fontStyle": "vscode#comment"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-type-face",
+    "foreground": ["vscode#entity.name.class", "vscode#entity.name.type.class"],
+    "background": [],
+    "fontStyle": "vscode#entity.name.class"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-variable-name-face",
+    "foreground": ["vscode#variable"],
+    "background": [],
+    "fontStyle": "vscode#variable"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-constant-face",
+    "foreground": ["vscode#constant.language"],
+    "background": [],
+    "fontStyle": "vscode#constant.language"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-string-face",
+    "foreground": ["vscode#string"],
+    "background": [],
+    "fontStyle": "vscode#string"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-function-name-face",
+    "foreground": ["vscode#entity.name.function"],
+    "background": [],
+    "fontStyle": "vscode#entity.name.function"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-builtin-face",
+    "foreground": ["vscode#support.function", "vscode#entity.name.function"],
+    "background": [],
+    "fontStyle": "vscode#support.function"
+  }
+]

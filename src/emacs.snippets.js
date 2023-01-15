@@ -14,13 +14,13 @@ function getOverrides(cleanThemeName) {
 
 (custom-theme-set-variables
   '${cleanThemeName}
-  '(linum-format " %5i "))
+  '(linum-format " %3i "))
+
 `;
 }
 
 function getLoaders(cleanThemeName) {
   return `
-
 ;;;###autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
@@ -33,7 +33,9 @@ function getLoaders(cleanThemeName) {
   (interactive)
   (load-theme '${cleanThemeName} t))
 
+
 (provide-theme '${cleanThemeName})
+
 
 ;; Local Variables:
 ;; no-byte-compile: t

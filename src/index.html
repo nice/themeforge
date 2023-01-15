@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThemeFork</title>
+    <title>themesense</title>
     <link rel="stylesheet" href="main.bundle.css" />
   </head>
   <body>
@@ -15,8 +15,8 @@
     >
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <span class="is-size-5">themeHopper</span>
+          <a class="navbar-item" href="">
+            <span class="is-size-5">themesense</span>
           </a>
 
           <a
@@ -34,30 +34,16 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item"> Home </a>
-
-            <a class="navbar-item"> Documentation </a>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link"> More </a>
-
-              <div class="navbar-dropdown">
-                <a class="navbar-item"> About </a>
-                <a class="navbar-item"> Jobs </a>
-                <a class="navbar-item"> Contact </a>
-                <hr class="navbar-divider" />
-                <a class="navbar-item"> Report an issue </a>
-              </div>
-            </div>
+            <a class="navbar-item">screenshots</a>
+            <a class="navbar-item">about</a>
+            <a class="navbar-item">features</a>
+            <a class="navbar-item">limitations</a>
           </div>
 
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light"> Log in </a>
+                <a class="button is-light"> Github </a>
               </div>
             </div>
           </div>
@@ -72,15 +58,32 @@
         <div class="column">
           <div class="block">
             <h1 class="is-size-3 has-text-left">
-              Convert VS Code theme <br />
-              to Emacs
+              Generate Emacs and Vim theme from VS Code theme.json
             </h1>
           </div>
+
           <div class="card">
             <div class="card-content">
-              <p>Generate Emacs and Vim theme from VSCode theme.json</p>
-              <p>Written in Vanilla JS,</p>
+              <p class="mb-1">Few of my favorite VS Code theme's json files:</p>
+              <table class="table is-bordered is-fullwidth">
+                <tr>
+                  <td>Make Apps Theme</td>
+                  <td>Dark</td>
+                  <td><a href="">Link to theme.json</a></td>
+                </tr>
+                <tr>
+                  <td>Bluloco Theme</td>
+                  <td>Light</td>
+                  <td><a href="">Link to theme.json</a></td>
+                </tr>
+              </table>
             </div>
+          </div>
+
+          <div class="mt-5">
+            <a class="button is-dark" href="">Sample Screenshots</a>
+            <a class="button is-text" href="">Features</a>
+            <a class="button is-text" href="">Limitations</a>
           </div>
         </div>
 
@@ -89,7 +92,7 @@
             <div class="card-content">
               <form id="input-form">
                 <div class="field">
-                  <label class="label">Paste theme.json</label>
+                  <label class="label">Paste VS Code theme's json contents below.</label>
                   <div class="control">
                     <textarea
                       id="input-text"
@@ -945,12 +948,23 @@
                   </div>
                 </div>
                 <input
-                  class="button is-primary"
+                  class="button is-primary is-medium"
                   name=""
                   type="submit"
-                  value="Convert"
+                  value="Generate"
                 />
               </form>
+
+              <article class="message is-info mt-3">
+                <div class="message-body">
+                  <small>
+                    Note: Theme conversion depends on fallbacks for unsupported
+                    colors and editor defaults are adjusted automatically, so
+                    its better to modify the color values in the generated theme
+                    for exact change.
+                  </small>
+                </div>
+              </article>
             </div>
           </div>
           <!-- /.card  -->
@@ -962,26 +976,30 @@
     <!-- /.container  -->
 
     <div class="container">
-      <div class="columns">
-        <div class="column">
-          <div class="card">
-            <div class="card-content">Colors</div>
-          </div>
-        </div>
-        <div class="column is-two-thirds">
-          <div class="card">
-						<header class="card-header">
-							<p class="card-header-title">
-								Converted Theme
-							</p>
-						</header>
-            <div class="card-content">
-              <pre class="has-background-dark has-text-white">asdlasdasldj</pre>
+      <div class="card mt-5">
+        <div class="card-content">
+          <div class="columns">
+            <div class="column">
+              <div class="block">
+                <h5 class="is-size-5">Theme's Color Palette</h5>
+              </div>
+            </div>
+            <div class="column is-two-thirds">
+              <div class="block">
+                <h5 class="is-size-5">Generated Theme</h5>
+              </div>
+              <pre
+                id="output"
+                class="has-background-dark has-text-white"
+                spellcheck="false"
+                readonly
+              ></pre>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <script src="index.bundle.js"></script>
   </body>
 </html>
