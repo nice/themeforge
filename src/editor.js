@@ -1,5 +1,6 @@
-import settings from "./emacs.settings.json";
-import { parseTheme, cleanString, shadeColor } from "./utils";
+import { parseTheme, cleanString } from "./utils/common";
+import hex2bit from "./utils/hex2bit";
+import shadeHex from "./utils/shadeHex";
 
 class Editor {
   constructor(json) {
@@ -10,12 +11,15 @@ class Editor {
     this.themeColors = data.themeColors;
     this.themeScope = data.themeScope;
 
-    this.counter = 0;
+    this.hexCounter = 0;
+    this.bitCounter = 0;
     this.editorScope = {};
-    this.colorMap = {};
+    this.hexColorMap = {};
+    this.bitColorMap = {};
     this.cleanThemeName = cleanString(this.themeName);
 
     // IMPORTANT: override below variables and methods from child class
+    this.settings = "[warning: settings is not set]";
     this.editor = "[warning: editor not set]";
     this.commentPrefix = "[warning: commentPrefix not set]";
 
@@ -26,11 +30,11 @@ class Editor {
   getHeader() {
     throw new Error("Not implemented");
   }
-	
+
   getFooter() {
     throw new Error("Not implemented");
   }
-	
+
   getLoaders() {
     throw new Error("Not implemented");
   }
@@ -58,7 +62,7 @@ class Editor {
 
     // main
     let toRender = [];
-    settings.forEach((config) => {
+    this.settings.forEach((config) => {
       toRender.push(this.resolveConfig(config));
     });
 
@@ -80,7 +84,7 @@ class Editor {
 
     return {
       themeData: output,
-      colorMap: this.colorMap,
+      colorMap: this.hexColorMap,
     };
   }
 
@@ -214,13 +218,25 @@ class Editor {
     return output;
   }
 
-  getColorKey(hex) {
-    if (this.colorMap[hex] === undefined) {
-      this.colorMap[hex] = "color" + this.counter;
-      this.counter++;
+  getHexKey(hex) {
+    if (this.hexColorMap[hex] === undefined) {
+      this.hexColorMap[hex] = "color" + this.hexCounter;
+      this.hexCounter++;
     }
 
-    return this.colorMap[hex];
+    return this.hexColorMap[hex];
+  }
+
+  getBitKey(hex) {
+    // first convert hex to closest 8-bit
+    let bit = hex2bit(hex);
+
+    if (this.bitColorMap[bit] === undefined) {
+      this.bitColorMap[bit] = "color" + this.bitCounter;
+      this.bitCounter++;
+    }
+
+    return this.bitColorMap[bit];
   }
 
   renderHeader() {
@@ -316,7 +332,7 @@ class Editor {
         if (this.themeType === "light" || this.themeType !== "dark")
           argument = -argument;
 
-        calculatedValue = shadeColor(value, argument);
+        calculatedValue = shadeHex(value, argument);
       }
     }
 

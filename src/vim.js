@@ -5,18 +5,18 @@ import {
   getLoaders,
   getLicense,
   getOverrides,
-} from "./snippets/emacs.snippets";
-import settings from "./settings/emacs.settings.json";
+} from "./snippets/vim.snippets";
+import settings from "./settings/vim.settings.json";
 
-class Emacs extends Editor {
+class Vim extends Editor {
   constructor(json) {
     super(json);
 
     this.settings = settings;
-    this.editor = "emacs";
-    this.commentPrefix = ";; ";
-    this.facesBlockBefore = `\n(custom-theme-set-faces\n'${this.cleanThemeName}`;
-    this.facesBlockAfter = `)`;
+    this.editor = "vim";
+    this.commentPrefix = '" ';
+    this.facesBlockBefore = "";
+    this.facesBlockAfter = "";
 
     this.getHeader = getHeader;
     this.getFooter = getFooter;
@@ -30,14 +30,21 @@ class Emacs extends Editor {
     if (!background.length && !foreground.length && !fontStyle.length)
       return "";
 
-    // start
-    if (background.length)
-      output += `:background ,${this.getHexKey(background)} `;
-    if (foreground.length)
-      output += `:foreground ,${this.getHexKey(foreground)} `;
-    if (fontStyle.length) output += `:fontStyle ${fontStyle} `;
+    const _getHexKey = (item) => {
+      if (item.length) {
+        return `s:hex.${this.getHexKey(item)}`;
+      } else return "";
+    };
 
-    output = `\`(${key} ((t (${output}))))`;
+    const _getBitKey = (item) => {
+      if (item.length) {
+        return `s:bit.${this.getBitKey(item)}`;
+      } else return "";
+    };
+
+    output = `call s:h("${key}", ${_getHexKey(background)}, ${_getHexKey(
+      foreground
+    )}, ${_getBitKey(background)}, ${_getBitKey(foreground)}, "")`;
 
     return output;
   }
@@ -47,10 +54,17 @@ class Emacs extends Editor {
 
     Object.entries(this.hexColorMap).forEach((entry) => {
       let [hex, colorName] = entry;
-      vars += `(${colorName} "${hex}")\n`;
+      vars += `let s:hex.${colorName}="${hex}"\n`;
     });
 
-    let output = `\n(let (\n${vars})\n\n`;
+    vars += "\n\n";
+
+    Object.entries(this.bitColorMap).forEach((entry) => {
+      let [hex, colorName] = entry;
+      vars += `let s:bit.${colorName}="${hex}"\n`;
+    });
+
+    let output = `\n${vars}`;
     return output;
   }
 
@@ -101,4 +115,4 @@ class Emacs extends Editor {
   }
 }
 
-export default Emacs;
+export default Vim;

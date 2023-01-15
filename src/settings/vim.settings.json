@@ -1,0 +1,17 @@
+[
+  {
+    "type": "comment",
+    "description": "general highlights"
+  },
+  {
+    "type": "face",
+    "face": "Normal",
+    "background": ["vscode#editor.background"],
+    "foreground": ["vscode#editor.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "comment",
+    "description": "syntax highlights"
+  }
+]
