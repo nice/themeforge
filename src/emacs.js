@@ -125,6 +125,8 @@ class Emacs {
 
     // resolve and apply actions
     toRender.forEach((item) => {
+			console.log(item)
+			console.log(this.editorScope)
       if (item.type === "face") {
         if (!item.background.resolved) {
           let [prefix, suffix] = item.background.resolution.split(".");
@@ -251,7 +253,7 @@ class Emacs {
 
     for (let i = 0; i < atomArr.length; i++) {
       // settings entry follows "editor#atom|action:argument" convention
-      const atomRegex = /([a-zA-Z]+)#([a-zA-Z.-]+)\|?([a-zA-Z]+)?:?([0-9]+)?/;
+      const atomRegex = /([a-zA-Z]+)#([a-zA-Z.-]+)\|?([a-zA-Z]+)?:?([0-9-]+)?/;
       const match = atomArr[i].match(atomRegex);
       editor = match[1];
       atom = match[2];

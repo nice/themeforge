@@ -67,9 +67,22 @@
   },
   {
     "type": "face",
+    "face": "mode-line-inactive",
+    "foreground": [
+      "vscode#statusBar.foreground",
+      "emacs#mode-line.foreground|adjust:25"
+    ],
+    "background": [
+      "vscode#statusBar.background",
+      "emacs#default.background|adjust:25"
+    ],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
     "face": "mode-line",
-    "foreground": ["vscode#statusBar.foreground"],
-    "background": ["vscode#statusBar.background"],
+    "foreground": ["emacs#mode-line-inactive.foreground|adjust:25"],
+    "background": ["emacs#mode-line-inactive.background|adjust:25"],
     "fontStyle": null
   },
   {
@@ -86,16 +99,92 @@
     "fontStyle": null
   },
   {
+    "type": "face",
+    "face": "border",
+    "background": ["vscode#window.activeBorder"],
+    "foreground": ["vscode#window.activeBorder"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "vertical-border",
+    "background": [],
+    "foreground": ["emacs#default.background|adjust:75"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "header-line",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "highlight",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "link",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "link-visited",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "trailing-whitespace",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "gui-element",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "widget-button",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "widget-field",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
     "type": "comment",
     "description": "font lock faces"
   },
-
   {
     "type": "face",
-    "face": "font-lock-keyword-face",
+    "face": "font-lock-builtin-face",
+    "foreground": ["vscode#support.function", "vscode#entity.name.function"],
     "background": [],
-    "foreground": ["vscode#keyword"],
-    "fontStyle": "vscode#keyword"
+    "fontStyle": "vscode#support.function"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-comment-delimiter-face",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
   },
   {
     "type": "face",
@@ -103,6 +192,77 @@
     "foreground": ["vscode#comment"],
     "background": [],
     "fontStyle": "vscode#comment"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-constant-face",
+    "foreground": ["vscode#constant.language"],
+    "background": [],
+    "fontStyle": "vscode#constant.language"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-doc-face",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "font-lock-doc-string-face",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "font-lock-function-name-face",
+    "foreground": ["vscode#entity.name.function"],
+    "background": [],
+    "fontStyle": "vscode#entity.name.function"
+  },
+  {
+    "type": "face",
+    "face": "font-lock-keyword-face",
+    "background": [],
+    "foreground": ["vscode#keyword"],
+    "fontStyle": "vscode#keyword"
+  },
+
+  {
+    "type": "face",
+    "face": "font-lock-negation-char-face",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "font-lock-preprocessor-face",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "font-lock-regexp-grouping-backslash",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "font-lock-regexp-grouping-construct",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "font-lock-string-face",
+    "foreground": ["vscode#string"],
+    "background": [],
+    "fontStyle": "vscode#string"
   },
   {
     "type": "face",
@@ -119,31 +279,77 @@
     "fontStyle": "vscode#variable"
   },
   {
-    "type": "face",
-    "face": "font-lock-constant-face",
-    "foreground": ["vscode#constant.language"],
-    "background": [],
-    "fontStyle": "vscode#constant.language"
+    "type": "comment",
+    "description": "linum-mode"
   },
   {
     "type": "face",
-    "face": "font-lock-string-face",
-    "foreground": ["vscode#string"],
+    "face": "linum",
     "background": [],
-    "fontStyle": "vscode#string"
+    "foreground": [
+      "vscode#editorLineNumber.foreground",
+      "emacs#default.foreground|adjust:-100"
+    ],
+    "fontStyle": null
   },
   {
     "type": "face",
-    "face": "font-lock-function-name-face",
-    "foreground": ["vscode#entity.name.function"],
+    "face": "linum-relative-current-face",
     "background": [],
-    "fontStyle": "vscode#entity.name.function"
+    "foreground": [
+      "vscode#editorLineNumber.foreground",
+      "emacs#default.foreground|adjust:-100"
+    ],
+    "fontStyle": null
+  },
+  {
+    "type": "comment",
+    "description": "display-line-number-mode"
   },
   {
     "type": "face",
-    "face": "font-lock-builtin-face",
-    "foreground": ["vscode#support.function", "vscode#entity.name.function"],
+    "face": "line-number",
+    "background": ["emacs#linum.background"],
+    "foreground": ["emacs#linum.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "line-number-current-line",
+    "background": ["emacs#linum.background"],
+    "foreground": ["emacs#linum.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "comment",
+    "description": "doom modeline"
+  },
+  {
+    "type": "face",
+    "face": "doom-modeline-bar",
+    "background": ["emacs#mode-line.background"],
+    "foreground": ["emacs#mode-line.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "doom-modeline-inactive-bar",
+    "background": ["emacs#mode-line-inactive.background"],
+    "foreground": ["emacs#mode-line-inactive.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "widget-field",
     "background": [],
-    "fontStyle": "vscode#support.function"
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "widget-field",
+    "background": [],
+    "foreground": [],
+    "fontStyle": null
   }
 ]
