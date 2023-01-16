@@ -6,8 +6,8 @@
   {
     "type": "face",
     "face": "default",
-    "foreground": ["vscode#editor.foreground"],
-    "background": ["vscode#editor.background"],
+    "background": ["vscode#editor.background", "vscode#terminal.background"],
+    "foreground": ["vscode#editor.foreground", "vscode#terminal.foreground"],
     "fontStyle": null
   },
   {
