@@ -1,18 +1,18 @@
 function getJson(text) {
-  let err = false;
+  let error = false;
   let json = null;
 
   try {
     json = JSON.parse(text);
   } catch (err) {
-    err = true;
-    console.log(err);
+    error = true;
+  } finally {
+    console.log(error, json, "finally");
+    return {
+      error,
+      json,
+    };
   }
-
-  return {
-    err,
-    json,
-  };
 }
 
 function parseTheme(json) {
@@ -73,6 +73,5 @@ function cleanString(input) {
 
   return str;
 }
-
 
 export { getJson, parseTheme, cleanString };

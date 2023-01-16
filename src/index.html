@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>themesense</title>
+    <title>themeforge</title>
     <link rel="stylesheet" href="main.bundle.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav
@@ -16,7 +20,7 @@
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="">
-            <span class="is-size-5">themesense</span>
+            <span class="is-size-4 has-text-weight-medium">themeforge</span>
           </a>
 
           <a
@@ -35,15 +39,12 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item">screenshots</a>
-            <a class="navbar-item">about</a>
-            <a class="navbar-item">features</a>
-            <a class="navbar-item">limitations</a>
           </div>
 
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-light"> Github </a>
+                <span class="material-icons md-24">github</span>
               </div>
             </div>
           </div>
@@ -51,7 +52,7 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container pb-5">
       <div class="block mt-3"></div>
 
       <div class="columns is-vcentered">
@@ -60,50 +61,59 @@
             <h1 class="is-size-3 has-text-left">
               Generate Emacs and Vim theme from VS Code theme.json
             </h1>
+            <p>* Can be extended to other editors.</p>
           </div>
-
           <div class="card">
             <div class="card-content">
-              <p class="mb-1">Few of my favorite VS Code theme's json files:</p>
+              <p class="mb-1">Few nice looking VS Code theme's json files:</p>
               <table class="table is-bordered is-fullwidth">
                 <tr>
-                  <td>Make Apps Theme</td>
-                  <td>Dark</td>
-                  <td><a href="">Link to theme.json</a></td>
+                  <td>Bluloco Theme <small>(light)</small></td>
+                  <td>
+                    <a
+                      href="https://raw.githubusercontent.com/uloco/theme-bluloco-light/main/themes/bluloco-light-color-theme.json"
+                      target="_blank"
+                      >Link to theme.json</a
+                    >
+                  </td>
                 </tr>
                 <tr>
-                  <td>Bluloco Theme</td>
-                  <td>Light</td>
-                  <td><a href="">Link to theme.json</a></td>
+                  <td>Palenight <small>(dark)</small></td>
+                  <td>
+                    <a
+                      href="https://raw.githubusercontent.com/whizkydee/vscode-palenight-theme/master/themes/palenight.json"
+                      target="_blank"
+                      >Link to theme.json</a
+                    >
+                  </td>
                 </tr>
               </table>
+              <a href="">How to find VS Code theme's json file?</a>
             </div>
           </div>
 
           <div class="mt-5">
-            <a class="button is-dark" href="">Sample Screenshots</a>
-            <a class="button is-text" href="">Features</a>
-            <a class="button is-text" href="">Limitations</a>
+            <a class="button is-primary is-outlined" href="">Screenshots</a>
           </div>
         </div>
 
         <div class="column is-two-thirds">
           <div class="card">
             <div class="card-content">
-              <form id="input-form">
+              <form id="form">
                 <div class="field">
                   <label class="label"
                     >Paste VS Code theme's json contents below.</label
                   >
                   <div class="control">
                     <textarea
-                      id="input-text"
+                      id="input"
                       class="textarea"
                       placeholder="Paste contents of theme.json"
                       spellcheck="false"
                     >
 {
-  "name": "foo bar",
+  "name": "Make Apps",
   "type": "dark",
   "colors": {
     "editor.background": "#242e33",
@@ -949,21 +959,37 @@
                     >
                   </div>
                 </div>
-                <input
-                  class="button is-primary is-medium"
-                  name=""
-                  type="submit"
-                  value="Generate"
-                />
+
+                <div class="field">
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" name="editor" value="emacs" checked />
+                      Emacs
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="editor" value="vim" />
+                      Vim
+                    </label>
+                  </div>
+                </div>
+                <div class="field">
+                  <input
+                    class="button is-primary is-medium"
+                    name=""
+                    type="submit"
+                    value="Generate"
+                  />
+                  <p id="input-help" class="help is-dark is-hidden">Options changed, please Generate again.</p>
+                </div>
               </form>
 
               <article class="message is-info mt-3">
                 <div class="message-body">
                   <small>
                     Note: Theme conversion depends on fallbacks for unsupported
-                    colors and editor defaults are adjusted automatically, so
-                    its better to modify the color values in the generated theme
-                    for exact change.
+                    colors, editor defaults are adjusted automatically, so its
+                    better to modify the color values in the generated theme for
+                    exact change.
                   </small>
                 </div>
               </article>
@@ -977,24 +1003,58 @@
     </div>
     <!-- /.container  -->
 
-    <div class="container">
-      <div class="card mt-5">
+    <div class="container pb-5">
+      <div id="result" class="card mt-5">
         <div class="card-content">
           <div class="columns">
-            <div class="column">
+            <div class="column is-one-third">
               <div class="block">
-                <h5 class="is-size-5">Theme's Color Palette</h5>
+                <div class="level">
+                  <div class="level-item is-justify-content-left">
+                    <h5 class="is-size-5">How to use?</h5>
+                  </div>
+                  <div class="level-item">
+                    <button class="button is-light is-invisible"></button>
+                  </div>
+                </div>
               </div>
+              <div id="result-usage"></div>
+              <hr />
+              <div class="block">
+                <h5 class="is-size-5">Generated Color Palette</h5>
+              </div>
+              <div id="result-colors"></div>
             </div>
             <div class="column is-two-thirds">
               <div class="block">
-                <h5 class="is-size-5">Generated Theme</h5>
+                <div class="level">
+                  <div class="level-item is-justify-content-left">
+                    <h5 class="is-size-5">
+                      Generated <span id="editor-name">Editor</span> Theme
+                    </h5>
+                  </div>
+                  <div class="level-item is-justify-content-right">
+                    <button
+                      id="copy-button"
+                      class="button is-light clip"
+                      data-clipboard-target="#result-theme"
+                    >
+                      Copy
+                    </button>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <a
+                      id="download"
+                      class="button is-success"
+                      data-clipboard-target="#result-theme"
+                    >
+                      <span class="material-icons md-24">download</span>
+                      Download
+                    </a>
+                  </div>
+                </div>
               </div>
-              <button class="button is-light clip" data-clipboard-target="#output">
-                Copy
-              </button>
               <pre
-                id="output"
+                id="result-theme"
                 class="has-background-dark has-text-white"
                 spellcheck="false"
                 readonly
@@ -1004,6 +1064,27 @@
         </div>
       </div>
     </div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <div class="level">
+          <div class="level-item is-justify-content-right">
+            <p><strong>themeforge</strong> by Jayaram &nbsp;</p>
+          </div>
+          <div class="level-item is-justify-content-left"></div>
+        </div>
+        <div>
+          <script
+            type="text/javascript"
+            src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
+          ></script>
+          <script type="text/javascript">
+            kofiwidget2.init("Support Me on Ko-fi", "#29abe0", "Q5Q0HWTAF");
+            kofiwidget2.draw();
+          </script>
+        </div>
+      </div>
+    </footer>
 
     <script src="index.bundle.js"></script>
   </body>

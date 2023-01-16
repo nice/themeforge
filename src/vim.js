@@ -5,6 +5,7 @@ import {
   getLoaders,
   getLicense,
   getOverrides,
+  getInstructions,
 } from "./snippets/vim.snippets";
 import settings from "./settings/vim.settings.json";
 
@@ -112,6 +113,9 @@ class Vim extends Editor {
       action: null,
       argument: null,
     };
+  }
+  getUsage() {
+    return getInstructions(this);
   }
 }
 

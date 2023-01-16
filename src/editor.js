@@ -85,6 +85,8 @@ class Editor {
     return {
       themeData: output,
       colorMap: this.hexColorMap,
+      usage: this.getUsage(),
+      cleanThemeName: this.cleanThemeName,
     };
   }
 
@@ -337,6 +339,10 @@ class Editor {
     }
 
     return calculatedValue;
+  }
+
+  getUsage() {
+    return "";
   }
 
   log() {

@@ -11,3 +11,45 @@ $dark: #464646;
   min-height: 14em !important;
 }
 
+pre {
+  border-radius: 0.25rem;
+}
+
+#input-help {
+  font-size: 0.85rem;
+}
+
+#result-usage span.tag {
+  font-size: 0.85rem;
+}
+
+#result-colors span {
+  width: 100%;
+  height: 2em;
+  display: inline-block;
+  border: 1px solid $dark;
+  border-radius: 0.25rem;
+}
+
+.icon {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}

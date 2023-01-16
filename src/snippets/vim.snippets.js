@@ -64,9 +64,12 @@ let s:bit = {}
 
 function getFooter() {
   return `
-" Generated with https://github.com/nice/themehopper
 highlight link cStatement Statement
 highlight link cSpecial Special
+
+
+" Generated using https://github.com/nice/themeforge
+" Feel free to remove the above URL and this line.
 `;
 }
 
@@ -78,4 +81,25 @@ function getLoaders(_) {
   return "";
 }
 
-export { getLicense, getLoaders, getOverrides, getHeader, getFooter };
+function getInstructions(that) {
+  let html = `
+<div class="block">
+<p class="mb-1">1. Download or create file <span class="tag is-secondary">${that.cleanThemeName}.vim</span></p>
+<p class="mb-1">2. Move the file to <span class="tag is-secondary">~/.vim/colors/${that.cleanThemeName}.vim</span></p>
+<p class="mb-1">3. Add this in your <span class="tag is-secondary">~/.vimrc</span></p>
+<pre>
+color ${that.cleanThemeName}
+</div>
+  `;
+
+  return html;
+}
+
+export {
+  getLicense,
+  getLoaders,
+  getOverrides,
+  getHeader,
+  getFooter,
+  getInstructions,
+};

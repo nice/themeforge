@@ -5,6 +5,7 @@ import {
   getLoaders,
   getLicense,
   getOverrides,
+  getInstructions,
 } from "./snippets/emacs.snippets";
 import settings from "./settings/emacs.settings.json";
 
@@ -98,6 +99,10 @@ class Emacs extends Editor {
       action: null,
       argument: null,
     };
+  }
+
+  getUsage() {
+    return getInstructions(this);
   }
 }
 
