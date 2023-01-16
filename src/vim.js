@@ -33,18 +33,18 @@ class Vim extends Editor {
     const _getHexKey = (item) => {
       if (item.length) {
         return `s:hex.${this.getHexKey(item)}`;
-      } else return "";
+      } else return `""`;
     };
 
     const _getBitKey = (item) => {
       if (item.length) {
         return `s:bit.${this.getBitKey(item)}`;
-      } else return "";
+      } else return `""`;
     };
 
     output = `call s:h("${key}", ${_getHexKey(background)}, ${_getHexKey(
       foreground
-    )}, ${_getBitKey(background)}, ${_getBitKey(foreground)}, "")`;
+    )}, ${_getBitKey(background)}, ${_getBitKey(foreground)}, "none")`;
 
     return output;
   }

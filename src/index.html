@@ -92,7 +92,9 @@
             <div class="card-content">
               <form id="input-form">
                 <div class="field">
-                  <label class="label">Paste VS Code theme's json contents below.</label>
+                  <label class="label"
+                    >Paste VS Code theme's json contents below.</label
+                  >
                   <div class="control">
                     <textarea
                       id="input-text"
@@ -988,6 +990,9 @@
               <div class="block">
                 <h5 class="is-size-5">Generated Theme</h5>
               </div>
+              <button class="button is-light clip" data-clipboard-target="#output">
+                Copy
+              </button>
               <pre
                 id="output"
                 class="has-background-dark has-text-white"

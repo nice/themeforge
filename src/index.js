@@ -2,6 +2,14 @@ import "./styles/main.scss";
 import { getJson } from "./utils/common";
 import Emacs from "./emacs";
 import Vim from "./vim";
+import ClipboardJS from "clipboard";
+
+new ClipboardJS(".clip", {
+  text: function (trigger) {
+    trigger.innerText = "Copied";
+    setTimeout(() => (trigger.innerText = "Copy"), 2000);
+  },
+});
 
 function handleSubmit(e) {
   const inputText = document.querySelector("#input-text").value;

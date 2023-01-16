@@ -14,14 +14,14 @@
     "type": "face",
     "face": "line-number",
     "background": [],
-    "foreground": ["vscode#string"],
+    "foreground": [],
     "fontStyle": null
   },
   {
     "type": "face",
     "face": "line-number-current-line",
     "background": [],
-    "foreground": ["vscode#string"],
+    "foreground": [],
     "fontStyle": null
   },
   {

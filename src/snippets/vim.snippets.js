@@ -13,21 +13,27 @@ function getHeader(that) {
 
 " ${that.themeName} - A nice ${that.themeType} theme
 
-" Reset
-hi clear
-if exists('syntax_on') | syntax reset | endif
-set background=dark
-let g:colors_name = 'foo-bar'
+" ==========> Reset
+set background=${that.themeType}
 
+hi clear
+
+if exists("syntax_on")
+  syntax reset
+endif
+
+let g:colors_name = '${that.cleanThemeName}'
+
+" ==========> Highlight function
 function! s:h(face, guibg, guifg, ctermbg, ctermfg, gui)
   let l:cmd="highlight " . a:face
   
   if a:guibg != ""
-    let l:cmd = l:cmd . " guifg=" . a:guifg
+    let l:cmd = l:cmd . " guibg=" . a:guibg
   endif
 
-  if a:guibg != ""
-    let l:cmd = l:cmd . " guibg=" . a:guibg
+  if a:guifg != ""
+    let l:cmd = l:cmd . " guifg=" . a:guifg
   endif
 
   if a:ctermbg != ""
@@ -45,57 +51,31 @@ function! s:h(face, guibg, guifg, ctermbg, ctermfg, gui)
   exec l:cmd
 endfun
 
-" Colors dictionary
 
-" hex colors
+" ==========> Colors dictionary
+
+" GUI colors dictionary (hex)
 let s:hex = {}
-
-" 8-bit colors
+" Terminal colors dictionary (256)
 let s:bit = {}
 
 `;
 }
 
 function getFooter() {
-  return `" footer ends here`;
-}
-
-function getOverrides(that) {
-  return "";
   return `
-
-
-(custom-theme-set-variables
-  '${that.cleanThemeName}
-  '(linum-format " %3i "))
-
+" Generated with https://github.com/nice/themehopper
+highlight link cStatement Statement
+highlight link cSpecial Special
 `;
 }
 
-function getLoaders(that) {
+function getOverrides(_) {
   return "";
-  return `
-;;;###autoload
-(when load-file-name
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
+}
 
-
-;;;###autoload
-(defun ${that.cleanThemeName}-theme()
-  "Apply the ${that.cleanThemeName}-theme."
-  (interactive)
-  (load-theme '${that.cleanThemeName} t))
-
-
-(provide-theme '${that.cleanThemeName})
-
-
-;; Local Variables:
-;; no-byte-compile: t
-;; End:
-
-`;
+function getLoaders(_) {
+  return "";
 }
 
 export { getLicense, getLoaders, getOverrides, getHeader, getFooter };

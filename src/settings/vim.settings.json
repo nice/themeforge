@@ -1,7 +1,7 @@
 [
   {
     "type": "comment",
-    "description": "general highlights"
+    "description": "==========> General highlights "
   },
   {
     "type": "face",
@@ -11,7 +11,244 @@
     "fontStyle": null
   },
   {
+    "type": "face",
+    "face": "Cursor",
+    "foreground": ["vscode#editorCursor.background"],
+    "background": ["vscode#editorCursor.foreground"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "MatchParen",
+    "foreground": [],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "Search",
+    "foreground": [],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "Visual",
+    "background": [
+      "vscode#editor.selectionBackground",
+      "vim#Normal.background|adjust:45"
+    ],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "ColorColumn",
+    "background": ["vim#Normal.background|adjust:10"],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "LineNr",
+    "foreground": ["vim#Normal.background|adjust:50"],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "CursorLine",
+    "background": ["vim#Normal.background|adjust:20"],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "CursorLineNr",
+    "background": [],
+    "foreground": ["vim#LineNr.foreground|adjust:20"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "CursorColumn",
+    "background": ["vim#Normal.background|adjust:20"],
+    "foreground": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "StatusLineNC",
+    "background": [
+      "vscode#statusBar.foreground",
+      "vim#Normal.foreground|adjust:25"
+    ],
+    "foreground": [
+      "vscode#statusBar.background",
+      "vim#Normal.background|adjust:25"
+    ],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "StatusLine",
+    "background": ["vim#StatusLineNC.background|adjust:25"],
+    "foreground": ["vim#StatusLineNC.foreground|adjust:25"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "VertSplit",
+    "foreground": ["vim#Normal.background|adjust:75"],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "Folded",
+    "foreground": ["vim#Function.foreground|adjust:-20"],
+    "background": ["vim#Normal.background|adjust:20"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "Pmenu",
+    "background": ["vim#Normal.background|adjust:30"],
+    "foreground": ["vim#Normal.foreground|adjust:30"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "PmenuSel",
+    "background": ["vim#Normal.background|adjust:10"],
+    "foreground": ["vim#Normal.foreground|adjust:10"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "Title",
+    "foreground": [],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "SpecialKey",
+    "foreground": [],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "EndOfBuffer",
+    "background": ["vim#Normal.background"],
+    "foreground": ["vim#Normal.background|adjust:35"],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "NonText",
+    "background": ["vim#EndOfBuffer.background"],
+    "foreground": ["vim#EndOfBuffer.foreground"],
+    "fontStyle": null
+  },
+  {
     "type": "comment",
-    "description": "syntax highlights"
+    "description": "==========> Syntax highlights"
+  },
+  {
+    "type": "face",
+    "face": "Comment",
+    "foreground": ["vscode#comment"],
+    "background": [],
+    "fontStyle": "vscode#comment"
+  },
+  {
+    "type": "face",
+    "face": "Constant",
+    "foreground": ["vscode#constant", "vscode#constant.language"],
+    "background": [],
+    "fontStyle": "vscode#constant.language"
+  },
+  {
+    "type": "face",
+    "face": "Special",
+    "foreground": ["vim#Constant.foreground"],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "Identifier",
+    "foreground": ["vscode#string"],
+    "background": [],
+    "fontStyle": "vscode#variable"
+  },
+  {
+    "type": "face",
+    "face": "Function",
+    "foreground": ["vscode#entity.name.function"],
+    "background": [],
+    "fontStyle": "vscode#entity.name.function"
+  },
+  {
+    "type": "face",
+    "face": "Statement",
+    "foreground": [
+      "vscode#keyword",
+      "vscode#entity.name.class",
+      "vscode#entity.name.type.class"
+    ],
+    "background": [],
+    "fontStyle": "vscode#keyword"
+  },
+  {
+    "type": "face",
+    "face": "Operator",
+    "foreground": ["vscode#keyword.operator"],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "PreProc",
+    "foreground": ["vim#Statement.foreground"],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "Type",
+    "foreground": ["vim#Statement.foreground"],
+    "background": [],
+    "fontStyle": "vscode#entity.name.class"
+  },
+  {
+    "type": "face",
+    "face": "String",
+    "foreground": ["vscode#string"],
+    "background": [],
+    "fontStyle": "vscode#string"
+  },
+  {
+    "type": "face",
+    "face": "Number",
+    "foreground": ["vscode#constant.numeric"],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "cStatement",
+    "foreground": [],
+    "background": [],
+    "fontStyle": null
+  },
+  {
+    "type": "face",
+    "face": "cSpecial",
+    "foreground": [],
+    "background": [],
+    "fontStyle": null
   }
 ]
