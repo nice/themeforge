@@ -12,20 +12,6 @@
   },
   {
     "type": "face",
-    "face": "line-number",
-    "background": [],
-    "foreground": [],
-    "fontStyle": null
-  },
-  {
-    "type": "face",
-    "face": "line-number-current-line",
-    "background": [],
-    "foreground": [],
-    "fontStyle": null
-  },
-  {
-    "type": "face",
     "face": "hl-line",
     "background": ["emacs#default.background|adjust:20"],
     "foreground": [],
