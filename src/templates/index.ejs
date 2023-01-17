@@ -8,7 +8,7 @@
         <h1 class="is-size-3 has-text-left">
           Generate Emacs and Vim theme from VS Code theme.json
         </h1>
-        <p>* Can be extended to other editors. <a href="/faq#extending">(faq)</a></p>
+        <p>* Can be extended to other editors. <a href="<%= meta.basePath %>/faq#extending">(faq)</a></p>
       </div>
       <div class="card">
         <div class="card-content">
@@ -35,24 +35,25 @@
               </td>
             </tr>
           </table>
-          <a href="/faq#json">How to find VS Code theme's json file?</a>
+          <a href="<%= meta.basePath %>/faq#json">How to find VS Code theme's json file?</a>
         </div>
       </div>
 
       <div class="mt-5">
-        <a class="button is-primary is-outlined" href="/screenshots">Screenshots</a>
+        <a class="button is-primary is-outlined" href="<%= meta.basePath %>/screenshots">Screenshots</a>
       </div>
     </div>
 
     <div class="column is-two-thirds">
       <div class="card">
         <div class="card-content">
-          <form id="form">
+          <form id="form" autocomplete="off">
             <div class="field">
               <label class="label">
                 Paste VS Code theme's json contents below.
               </label>
-              <div class="control">
+              <div id="input-wrapper" class="control">
+                <p id="input-error" class="has-text-danger is-hidden"></p>
                 <textarea
                   id="input"
                   class="textarea"

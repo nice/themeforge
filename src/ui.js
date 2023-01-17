@@ -3,6 +3,7 @@ class UI {
     this.selectors = {
       form: "#form",
       input: "#input",
+      inputWrapper: "#input-wrapper",
       result: "#result",
       resultTheme: "#result-theme",
       resultColors: "#result-colors",
@@ -11,6 +12,7 @@ class UI {
       editorName: "#editor-name",
       download: "#download",
       inputHelp: "#input-help",
+      inputError: "#input-error",
       clear: "#clear",
     };
   }
@@ -92,6 +94,20 @@ ${colorName}: <span style="background: ${hex}"></span>
       left: rect.left + window.scrollX,
       top: rect.top + window.scrollY,
     };
+  }
+
+  showError(msg) {
+    const $error = document.querySelector(this.selectors.inputError);
+    $error.textContent = msg;
+    $error.classList.remove("is-hidden");
+
+    setTimeout(() => $error.classList.add("is-hidden"), 3000);
+  }
+
+  clearError() {
+    const $error = document.querySelector(this.selectors.inputError);
+    $error.textContent = "";
+    $error.classList.add("is-hidden");
   }
 }
 

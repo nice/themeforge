@@ -2,6 +2,11 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const meta = {
+  basePath: "/themeforge",
+  baseFolder: "themeforge",
+};
+
 module.exports = {
   mode: "development",
 
@@ -9,7 +14,7 @@ module.exports = {
 
   output: {
     filename: "index.bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist", meta.baseFolder),
   },
 
   module: {
@@ -21,7 +26,7 @@ module.exports = {
           {
             loader: "ejs-webpack-loader",
             options: {
-              data: { title: "New Title", someVar: "hello world" },
+              data: { meta: meta },
               htmlmin: true,
             },
           },
@@ -73,7 +78,10 @@ module.exports = {
 
   devServer: {
     hot: false,
-    static: path.resolve(__dirname, "dist"),
+    static: path.resolve(__dirname, "dist", meta.baseFolder),
+    devMiddleware: {
+      publicPath: meta.basePath,
+    },
     port: 9000,
   },
 };

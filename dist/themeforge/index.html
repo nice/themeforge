@@ -1,5 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>themeforge</title><link rel="stylesheet" href="main.bundle.css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/></head><body><nav class="navbar is-primary" role="navigation" aria-label="main navigation"><div class="container"><div class="navbar-brand"><a class="navbar-item" href="/"><span class="is-size-4 has-text-weight-medium">themeforge</span>&nbsp;<sup>beta</sup> </a><a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"><span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span></a></div><div id="navbarBasicExample" class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/screenshots">screenshots</a> <a class="navbar-item" href="/faq">faq</a></div><div class="navbar-end"><div class="navbar-item"><div class="buttons"><iframe src="https://ghbtns.com/github-btn.html?user=nice&repo=themeforge&type=star&count=true&size=large" frameborder="0" scrolling="0" width="75" height="30" title="GitHub"></iframe></div></div></div></div></div></nav></body></html><div class="container pb-5"><div class="block mt-3"></div><div class="columns is-vcentered"><div class="column"><div class="block"><h1 class="is-size-3 has-text-left">Generate Emacs and Vim theme from VS Code theme.json</h1><p>* Can be extended to other editors.</p></div><div class="card"><div class="card-content"><p class="mb-1">Few nice looking VS Code theme's json files:</p><table class="table is-bordered is-fullwidth"><tr><td>Bluloco Theme <small>(light)</small></td><td><a href="https://raw.githubusercontent.com/uloco/theme-bluloco-light/main/themes/bluloco-light-color-theme.json" target="_blank">Link to theme.json</a></td></tr><tr><td>Palenight <small>(dark)</small></td><td><a href="https://raw.githubusercontent.com/whizkydee/vscode-palenight-theme/master/themes/palenight.json" target="_blank">Link to theme.json</a></td></tr></table><a href="">How to find VS Code theme's json file?</a></div></div><div class="mt-5"><a class="button is-primary is-outlined" href="/screenshots">Screenshots</a></div></div><div class="column is-two-thirds"><div class="card"><div class="card-content"><form id="form"><div class="field"><label class="label">Paste VS Code theme's json contents below.</label><div class="control"><textarea id="input" class="textarea" placeholder="Paste contents of theme.json" spellcheck="false">
-{
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>themeforge</title><link rel="stylesheet" href="/themeforge/main.bundle.css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/></head><body><nav class="navbar is-primary" role="navigation" aria-label="main navigation"><div class="container"><div class="navbar-brand"><a class="navbar-item" href="/"><span class="is-size-4 has-text-weight-medium">themeforge</span>&nbsp;<sup>beta</sup> </a><a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"><span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span></a></div><div id="navbarBasicExample" class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/screenshots">screenshots</a> <a class="navbar-item" href="/faq">faq</a></div><div class="navbar-end"><div class="navbar-item"><div class="buttons"><iframe src="https://ghbtns.com/github-btn.html?user=nice&repo=themeforge&type=star&count=true&size=large" frameborder="0" scrolling="0" width="75" height="30" title="GitHub"></iframe></div></div></div></div></div></nav></body></html><div class="container pb-5"><div class="block mt-3"></div><div class="columns is-vcentered"><div class="column"><div class="block"><h1 class="is-size-3 has-text-left">Generate Emacs and Vim theme from VS Code theme.json</h1><p>* Can be extended to other editors. <a href="/faq#extending">(faq)</a></p></div><div class="card"><div class="card-content"><p class="mb-1">Few nice looking VS Code theme's json files:</p><table class="table is-bordered is-fullwidth"><tr><td>Bluloco <small>(light)</small></td><td><a href="https://raw.githubusercontent.com/uloco/theme-bluloco-light/main/themes/bluloco-light-color-theme.json" target="_blank">Link to theme.json</a></td></tr><tr><td>Palenight <small>(dark)</small></td><td><a href="https://raw.githubusercontent.com/whizkydee/vscode-palenight-theme/master/themes/palenight.json" target="_blank">Link to theme.json</a></td></tr></table><a href="/faq#json">How to find VS Code theme's json file?</a></div></div><div class="mt-5"><a class="button is-primary is-outlined" href="/screenshots">Screenshots</a></div></div><div class="column is-two-thirds"><div class="card"><div class="card-content"><form id="form" autocomplete="off"><div class="field"><label class="label">Paste VS Code theme's json contents below.</label><div id="input-wrapper" class="control"><p id="input-error" class="has-text-danger is-hidden"></p><textarea id="input" class="textarea" placeholder="Paste contents of theme.json" spellcheck="false">{
   "name": "Make Apps",
   "type": "dark",
   "colors": {
@@ -35,7 +34,7 @@
     "foreground": "#c5c8c6",
     "contrastBorder": "#00000000",
     "focusBorder": "#00000000",
-    "titleBar.activeBackground":"#1c2428",
+    "titleBar.activeBackground": "#1c2428",
     "titleBar.inactiveBackground": "#1c2428",
     "titleBar.activeForeground": "#c5c8c6",
     "titleBar.inactiveForeground": "#c5c8c677",
@@ -124,20 +123,14 @@
     },
     {
       "name": "Other Constant",
-      "scope": [
-        "constant.character",
-        "constant.other"
-      ],
+      "scope": ["constant.character", "constant.other"],
       "settings": {
         "foreground": "#de935f"
       }
     },
     {
       "name": "Keyword",
-      "scope": [
-        "keyword",
-        "storage.modifier.async"
-      ],
+      "scope": ["keyword", "storage.modifier.async"],
       "settings": {
         "foreground": "#b294bb"
       }
@@ -186,10 +179,7 @@
     },
     {
       "name": "Inherited Class",
-      "scope": [
-        "entity.other.inherited-class",
-        "entity.name.type.module"
-      ],
+      "scope": ["entity.other.inherited-class", "entity.name.type.module"],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#81a2be"
@@ -268,10 +258,7 @@
     },
     {
       "name": "Built-Ins [e.g. __dirname, process.env] (JS)",
-      "scope": [
-        "support.variable.object",
-        "support.variable.property"
-      ],
+      "scope": ["support.variable.object", "support.variable.property"],
       "settings": {
         "foreground": "#de935f"
       }
@@ -293,10 +280,7 @@
     },
     {
       "name": "Storage Modifier [e.g. class, extends, static] (JS)",
-      "scope": [
-        "storage.modifier",
-        "storage.type.class.js"
-      ],
+      "scope": ["storage.modifier", "storage.type.class.js"],
       "settings": {
         "foreground": "#f0c674"
       }
@@ -425,10 +409,7 @@
     },
     {
       "name": "Attribute Selector (S/CSS)",
-      "scope": [
-        "meta.attribute-selector",
-        "punctuation.section.property-list"
-      ],
+      "scope": ["meta.attribute-selector", "punctuation.section.property-list"],
       "settings": {
         "foreground": "#f0c674"
       }
@@ -592,10 +573,7 @@
     },
     {
       "name": "Link (Markdown)",
-      "scope": [
-        "meta.link.inline.markdown",
-        "markup.underline.link.markdown"
-      ],
+      "scope": ["meta.link.inline.markdown", "markup.underline.link.markdown"],
       "settings": {
         "fontStyle": "",
         "foreground": "#81a2be"
@@ -635,10 +613,7 @@
     },
     {
       "name": "Punctuation (XML)",
-      "scope": [
-        "meta.tag.preprocessor.xml",
-        "meta.tag.xml"
-      ],
+      "scope": ["meta.tag.preprocessor.xml", "meta.tag.xml"],
       "settings": {
         "foreground": "#8abeb7"
       }
@@ -842,4 +817,25 @@
     }
   ]
 }
-									</textarea></div></div><div class="field"><div class="control"><label class="radio"><input type="radio" name="editor" value="emacs" checked="checked"> Emacs</label> <label class="radio"><input type="radio" name="editor" value="vim"> Vim</label></div></div><div class="field"><input class="button is-primary is-medium" name="" type="submit" value="Generate"><p id="input-help" class="help is-dark is-hidden">Options changed, please Generate again.</p></div></form><article class="message is-info mt-3"><div class="message-body"><small>Note: Theme conversion depends on fallbacks for unsupported colors, editor defaults are adjusted automatically, so its better to modify the color values in the generated theme for exact change.</small></div></article></div></div></div></div></div><div class="container pb-5"><div id="result" class="card mt-5"><div class="card-content"><div class="columns"><div class="column is-one-third"><div class="block"><div class="level"><div class="level-item is-justify-content-left"><h5 class="is-size-5">How to use?</h5></div><div class="level-item"><button class="button is-light is-invisible"></button></div></div></div><div id="result-usage"></div><hr><div class="block"><h5 class="is-size-5">Generated Color Palette</h5></div><div id="result-colors"></div></div><div class="column is-two-thirds"><div class="block"><div class="level"><div class="level-item is-justify-content-left"><h5 class="is-size-5">Generated <span id="editor-name">Editor</span> Theme</h5></div><div class="level-item is-justify-content-right"><button id="copy-button" class="button is-light clip" data-clipboard-target="#result-theme">Copy</button> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a id="download" class="button is-success" data-clipboard-target="#result-theme"><span class="material-icons md-24">download</span> Download</a></div></div></div><pre id="result-theme" class="has-background-dark has-text-white" spellcheck="false" readonly="readonly"></pre></div></div></div></div></div>
+</textarea></div></div><div class="field"><div class="control"><label class="radio"><input type="radio" name="editor" value="emacs" checked="checked"> Emacs</label> <label class="radio"><input type="radio" name="editor" value="vim"> Vim</label></div></div><div class="field is-flex is-align-items-baseline"><input class="button is-primary is-medium" name="" type="submit" value="Generate">&nbsp; <button id="clear" class="button is-small is-text">Clear</button></div><p id="input-help" class="help is-dark is-hidden">Options changed, please Generate again.</p></form><article class="message is-info mt-3"><div class="message-body"><small>Note: Theme conversion depends on fallbacks for unsupported colors, editor defaults are adjusted automatically, so its better to modify the color values in the generated theme for exact change.</small></div></article></div></div></div></div></div><div class="container pb-5"><div id="result" class="card mt-5 is-hidden"><div class="card-content"><div class="columns"><div class="column is-one-third"><div class="block"><div class="level"><div class="level-item is-justify-content-left"><h5 class="is-size-5">How to use?</h5></div><div class="level-item"><button class="button is-light is-invisible"></button></div></div></div><div id="result-usage"></div><hr><div class="block"><h5 class="is-size-5">Generated Color Palette</h5></div><div id="result-colors"></div></div><div class="column is-two-thirds"><div class="block"><div class="level"><div class="level-item is-justify-content-left"><h5 class="is-size-5">Generated <span id="editor-name">Editor</span> Theme</h5></div><div class="level-item is-justify-content-right"><button id="copy-button" class="button is-light clip" data-clipboard-target="#result-theme">Copy</button> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a id="download" class="button is-success" data-clipboard-target="#result-theme"><span class="material-icons md-24">download</span> Download</a></div></div></div><pre id="result-theme" class="has-background-dark has-text-white" spellcheck="false" readonly="readonly"></pre></div></div></div></div></div><footer class="footer"><div class="content has-text-centered"><div class="level"><div class="level-item is-justify-content-right"><p><strong>themeforge</strong> by Jayaram &nbsp;</p></div><div class="level-item is-justify-content-left"></div></div><div><script src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script><script>kofiwidget2.init("Support Me on Ko-fi", "#ff5f5f", "Q5Q0HWTAF");
+       kofiwidget2.draw();</script></div></div></footer><script src="/themeforge/index.bundle.js"></script><script>document.addEventListener('DOMContentLoaded', () => {
+
+   // Get all "navbar-burger" elements
+   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+   // Add a click event on each of them
+   $navbarBurgers.forEach( el => {
+     el.addEventListener('click', () => {
+
+       // Get the target from the "data-target" attribute
+       const target = el.dataset.target;
+       const $target = document.getElementById(target);
+
+       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+       el.classList.toggle('is-active');
+       $target.classList.toggle('is-active');
+
+     });
+   });
+
+ });</script>

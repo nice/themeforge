@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>themeforge</title>
-    <link rel="stylesheet" href="main.bundle.css" />
+    <link rel="stylesheet" href="<%= meta.basePath %>/main.bundle.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -19,9 +19,9 @@
     >
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="/">
+          <a class="navbar-item" href="<%= meta.basePath %>">
             <span class="is-size-4 has-text-weight-medium">themeforge</span
-                                                                     >&nbsp;<sup>beta</sup>
+            >&nbsp;<sup>beta</sup>
           </a>
 
           <a
@@ -39,8 +39,10 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item" href="/screenshots">screenshots</a>
-            <a class="navbar-item" href="/faq">faq</a>
+            <a class="navbar-item" href="<%= meta.basePath %>/screenshots"
+              >screenshots</a
+            >
+            <a class="navbar-item" href="<%= meta.basePath %>/faq">faq</a>
           </div>
 
           <div class="navbar-end">

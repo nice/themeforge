@@ -24,6 +24,7 @@ function generate(editor, input) {
   let { error, json } = getJson(input);
 
   if (error) {
+    ui.showError("Entered json is invalid, please clear and paste again.");
     console.log("Invalid JSON");
     return;
   }
