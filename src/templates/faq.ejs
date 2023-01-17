@@ -1,8 +1,94 @@
 <%- include partials/header.ejs %>
 <div class="container">
-  <div id="extending"></div>
+  <div class="block mt-3"></div>
+  <h1 class="is-size-3">faq</h1>
+  <div class="columns">
+    <div class="column is-one-third">
+      <div class="card mb-5">
+        <div class="card-content">
+          <ol>
+            <li><a href="#">Locating VS Code theme's json file.</a></li>
+            <li>
+              <a href="#">Configuration files used to generate themes.</a>
+            </li>
+            <li><a href="#">Extending to other editors.</a></li>
+            <li><a href="#">Some theme is not rendering properly.</a></li>
+            <li><a href="#">Font style support</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <article class="block">
+        <h3 class="is-size-5" id="json">1. Locating VS Code theme's json file.</h3>
+        <p>
+          <a
+            href="https://marketplace.visualstudio.com/search?target=VSCode&category=Themes&sortBy=TrendingWeekly"
+            target="_blank"
+          >Link to VS Code Theme Marketplace</a>
+          <br/>
+          The json file can be found in the <span class="tag">themes/</span> in most of the theme's repository.
+        </p>
+        <br/>
+
+        <div class="columns">
+            <div class="column">
+              <img alt="step one" src="https://res.cloudinary.com/dur0cxkf0/image/upload/v1673966067/themeforge/screenshot-marketplace.visualstudio.com-2023.01.17-19_34_31_ooeffs.jpg"/>              
+            </div>
+            <div class="column">
+              <img alt="step two" src="https://res.cloudinary.com/dur0cxkf0/image/upload/v1673966067/themeforge/screenshot-marketplace.visualstudio.com-2023.01.17-19_36_19_dqpfty.jpg"/>
+            </div>
+            <div class="column">
+              <img alt="step 3" src="https://res.cloudinary.com/dur0cxkf0/image/upload/v1673966067/themeforge/screenshot-github.com-2023.01.17-19_37_40_did012.jpg"/>
+            </div>
+        </div>
+        <div class="notification is-warning is-light">
+          <p>If you not able to find the theme's json files, you can click on <span class="tag">Download Extension</span> link shown in the 2nd screenshot above. Change the downloaded package's extension with <span class="tag">.zip</span> and extract it to find the <span class="tag">themes</span> folder containing the json files.</p>
+        </div>
+
+      </article>
+      
+      <article class="block">
+        <h3 class="is-size-5" id="settings">2. Configuration files used to generate themes.</h3>
+        <p>
+          Configuration files can be found here:
+          <a
+            class=""
+            href="https://github.com/nice/themeforge/tree/master/src/settings"
+            target="_blank"
+          >https://github.com/nice/themeforge/tree/master/src/settings</a>
+        </p>
+      </article>
+      
+      <article class="block">
+        <h3 class="is-size-5" id="extending">3. Extending to other editors</h3>
+        <p>Code is written in Vanilla JS</p>
+        <p>Please check the folder: <a href="https://github.com/nice/themeforge/tree/master/src" target="_blank">https://github.com/nice/themeforge/tree/master/src</a></p>
+        <p>The main generation logic is defined in the <span class="tag">Editor</span> class inside <span class="tag">editor.js</span></p>
+        <p>Emacs and Vim extends Editor class, see <span class="tag">emacs.js</span> and <span class="tag">vim.js</span> inside the same folder</p>
+        <p>If you need any help: <br/>
+          Please raise an issue at <a href="https://github.com/nice/themeforge" target="_blank">https://github.com/nice/themeforge</a> <br/>
+          Or reach out to <span class="tag">jayaram@gmx.com</span></p>        
+      </article>
+
+      <article class="block">
+        <h3 class="is-size-5" id="happy-little-accidents">4. Some theme is not rendering properly.</h3>
+        <p>Obligatory: <a href="https://www.youtube.com/watch?v=wCsO56kWwTc">https://www.youtube.com/watch?v=wCsO56kWwTc</a></p>
+        <br/>
+        <p>Theme generation relies on atleast a few basic keys being availabe in the VS Code theme.</p>
+        <p>Especially <span class="tag">editor.background</span>, <span class="tag">editor.foreground</span>, <span class="tag">type: dark/light</span></p>
+        <p>Also there are some editor limitations, typos in VS Code theme's json file, or the configuration might be missing in themeforge.</p>
+      </article>
+
+      <article class="mb-5">
+        <h3 class="is-size-5">5. Font style support</h3>
+        <p>Just a matter of configuration. Emacs supports this for some tokens/faces. Vim configuration is being updated.
+      </article>
+    </div>
+  </div>
 </div>
 
-
-<%- include partials/credits.ejs %>
-<%- include partials/footer.ejs %>
+<%- include partials/credits.ejs %> <%- include partials/footer.ejs %>

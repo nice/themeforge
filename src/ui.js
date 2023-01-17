@@ -49,8 +49,8 @@ class UI {
       count = index + 1;
 
       html += `
-<div class="column">
-${colorName}: <span style="background: ${hex}"></span>
+<div class="column has-text-centered">
+${colorName} <span style="background: ${hex}"></span>
 </div>
 `;
       if (count % perColumn === 0 && count !== 1) {

@@ -78,7 +78,7 @@ module.exports = {
 
   devServer: {
     hot: false,
-    static: path.resolve(__dirname, "dist", meta.baseFolder),
+    static: path.resolve(__dirname, "dist"),
     devMiddleware: {
       publicPath: meta.basePath,
     },
