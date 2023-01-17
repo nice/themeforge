@@ -284,6 +284,7 @@ class Editor {
       atomArgument = match[4];
 
       // Editor flow
+      // We cannot reosolve now because it can have dependencies on other faces
       if (editor === this.editor) {
         color.resolved = false;
         color.resolution = atom;
@@ -291,6 +292,7 @@ class Editor {
       }
 
       // VS Code flow
+      // We can resolve actions instantly
       let scope = this.themeScope[atom];
 
       // if theme.json does not have this defined
@@ -301,6 +303,15 @@ class Editor {
         if (scope.base.length > 7) continue;
         else {
           color.value = scope.base;
+
+          if (typeof atomAction !== "undefined") {
+            color.value = this.applyAction(
+              color.value,
+              atomAction,
+              atomArgument
+            );
+          }
+
           break;
         }
       }
@@ -309,6 +320,14 @@ class Editor {
         if (scope[atomType].length > 7) continue;
         else {
           color.value = scope[atomType];
+          if (typeof atomAction !== "undefined") {
+            color.value = this.applyAction(
+              color.value,
+              atomAction,
+              atomArgument
+            );
+          }
+
           break;
         }
       }
@@ -330,7 +349,6 @@ class Editor {
 
         // IF the theme is dark: lighten the shade
         // IF the theme is light: darken the shade
-        // IF you are sad: you must cheer up buddy :)
         if (this.themeType === "light" || this.themeType !== "dark")
           argument = -argument;
 

@@ -69,20 +69,20 @@
     "type": "face",
     "face": "mode-line-inactive",
     "foreground": [
-      "vscode#statusBar.foreground",
-      "emacs#mode-line.foreground|adjust:25"
+      "vscode#statusBar.foreground|adjust:20",
+      "emacs#default.foreground|adjust:20"
     ],
     "background": [
-      "vscode#statusBar.background",
-      "emacs#default.background|adjust:25"
+      "vscode#statusBar.background|adjust:20",
+      "emacs#default.background|adjust:20"
     ],
     "fontStyle": null
   },
   {
     "type": "face",
     "face": "mode-line",
-    "foreground": ["emacs#mode-line-inactive.foreground|adjust:25"],
-    "background": ["emacs#mode-line-inactive.background|adjust:25"],
+    "foreground": ["emacs#mode-line-inactive.foreground|adjust:20"],
+    "background": ["emacs#mode-line-inactive.background|adjust:20"],
     "fontStyle": null
   },
   {
