@@ -79,13 +79,13 @@
   {
     "type": "face",
     "face": "StatusLineNC",
-    "background": [
-      "vscode#statusBar.foreground",
-      "vim#Normal.foreground|adjust:25"
-    ],
     "foreground": [
-      "vscode#statusBar.background",
-      "vim#Normal.background|adjust:25"
+      "vscode#statusBar.foreground|adjust:20",
+      "emacs#default.foreground|adjust:20"
+    ],
+    "background": [
+      "vscode#statusBar.background|adjust:20",
+      "emacs#default.background|adjust:20"
     ],
     "fontStyle": null
   },
@@ -180,7 +180,7 @@
   {
     "type": "face",
     "face": "Identifier",
-    "foreground": ["vscode#string"],
+    "foreground": ["vscode#variable"],
     "background": [],
     "fontStyle": "vscode#variable"
   },
