@@ -56,11 +56,9 @@ ${colorName} <span style="background: ${hex}"></span>
       if (count % perColumn === 0 && count !== 1) {
         html += `</div><div class="columns is-mobile">`;
       }
-      // console.log(count, html);
     });
 
     if (count % perColumn !== 0) {
-      console.log(count);
       // fill extra space
       for (let i = 0; i < 4 - (count % perColumn); i++) {
         html += `<div class="column"></div>`;

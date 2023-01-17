@@ -7,7 +7,6 @@ function getJson(text) {
   } catch (err) {
     error = true;
   } finally {
-    console.log(error, json, "finally");
     return {
       error,
       json,
