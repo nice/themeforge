@@ -84,7 +84,7 @@ function getLoaders(_) {
 function getInstructions(that) {
   let html = `
 <div class="block">
-<p class="mb-1">1. Download or create file <span class="tag is-secondary">${that.cleanThemeName}.vim</span></p>
+<p class="mb-1">1. Download file <span class="tag is-secondary">${that.cleanThemeName}.vim</span></p>
 <p class="mb-1">2. Move the file to <span class="tag is-secondary">~/.vim/colors/${that.cleanThemeName}.vim</span></p>
 <p class="mb-1">3. Add this in your <span class="tag is-secondary">~/.vimrc</span></p>
 <pre>

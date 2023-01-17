@@ -58,9 +58,9 @@ function getLoaders(that) {
 function getInstructions(that) {
   let html = `
 <div class="block">
-<p class="mb-1">1. Download or create file <span class="tag is-secondary">${that.cleanThemeName}-theme.el</span></p>
+<p class="mb-1">1. Download file <span class="tag is-secondary">${that.cleanThemeName}-theme.el</span></p>
 <p class="mb-1">2. Move the file to <span class="tag is-secondary">~/.emacs.d/${that.cleanThemeName}-theme.el</span></p>
-<p class="mb-1">3. Add this in your <span class="tag is-secondary">~/init.el</span></p>
+<p class="mb-1">3. Add this in your <span class="tag is-secondary">~/.emacs.d/init.el</span></p>
 <pre>
 (load "~/.emacs.d/${that.cleanThemeName}-theme.el")
 (load-theme '${that.cleanThemeName} t)</pre>

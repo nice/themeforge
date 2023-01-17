@@ -32,7 +32,7 @@ class UI {
     document.querySelector(this.selectors.resultTheme).innerText = themeData;
 
     // display theme colors
-    let html = `<div class="columns">`;
+    let html = `<div class="columns is-mobile">`;
     let count = 0;
     let perColumn = 4;
 
@@ -46,7 +46,7 @@ ${colorName}: <span style="background: ${hex}"></span>
 </div>
 `;
       if (count % perColumn === 0 && count !== 1) {
-        html += `</div><div class="columns">`;
+        html += `</div><div class="columns is-mobile">`;
       }
       // console.log(count, html);
     });
