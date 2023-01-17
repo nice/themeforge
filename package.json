@@ -17,6 +17,7 @@
     "babel-loader": "^9.1.2",
     "bulma": "^0.9.4",
     "css-loader": "^6.7.3",
+    "ejs-webpack-loader": "^2.2.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
     "node-sass": "^8.0.0",

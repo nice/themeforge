@@ -14,6 +14,19 @@ module.exports = {
 
   module: {
     rules: [
+      // ejs
+      {
+        test: /\.ejs$/,
+        use: [
+          {
+            loader: "ejs-webpack-loader",
+            options: {
+              data: { title: "New Title", someVar: "hello world" },
+              htmlmin: true,
+            },
+          },
+        ],
+      },
       // js
       {
         test: /\.m?js$/,
@@ -40,8 +53,18 @@ module.exports = {
     }),
     // to create dist/index.html from src
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "index.html"),
+      template: path.resolve(__dirname, "src/templates", "index.ejs"),
       inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/templates", "screenshots.ejs"),
+      inject: false,
+      filename: "screenshots/index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/templates", "faq.ejs"),
+      inject: false,
+      filename: "faq/index.html",
     }),
   ],
 
