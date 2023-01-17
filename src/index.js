@@ -52,6 +52,7 @@ function download() {
 }
 
 function init() {
+  ui.clearResults();
   const { editor, input } = ui.getInputs();
   generate(editor, input);
 }
@@ -87,6 +88,13 @@ document
   .querySelector(ui.selectors.download)
   .addEventListener("click", function (e) {
     download();
+    e.preventDefault();
+  });
+
+document
+  .querySelector(ui.selectors.clear)
+  .addEventListener("click", function (e) {
+    ui.clearInput();
     e.preventDefault();
   });
 

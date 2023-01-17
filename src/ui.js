@@ -11,6 +11,7 @@ class UI {
       editorName: "#editor-name",
       download: "#download",
       inputHelp: "#input-help",
+      clear: "#clear",
     };
   }
 
@@ -22,8 +23,13 @@ class UI {
     return { editor, input };
   }
 
+  clearInput() {
+    document.querySelector(this.selectors.input).value = "";
+    this.clearResults();
+  }
+
   setResults(themeData, colorMap, usage, editorName) {
-    document.querySelector(this.selectors.result).style.display = "block";
+    document.querySelector(this.selectors.result).classList.remove("is-hidden");
 
     // set editor name
     document.querySelector(this.selectors.editorName).textContent = editorName;
@@ -67,7 +73,7 @@ ${colorName}: <span style="background: ${hex}"></span>
   }
 
   clearResults() {
-    document.querySelector(this.selectors.result).style.display = "none";
+    document.querySelector(this.selectors.result).classList.add("is-hidden");
   }
 
   showHelp() {
@@ -77,11 +83,8 @@ ${colorName}: <span style="background: ${hex}"></span>
   }
 
   clearHelp() {
-    document
-      .querySelector(this.selectors.inputHelp)
-      .classList.add("is-hidden");
+    document.querySelector(this.selectors.inputHelp).classList.add("is-hidden");
   }
-
 
   getOffset(el) {
     const rect = el.getBoundingClientRect();
