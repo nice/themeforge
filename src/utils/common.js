@@ -1,9 +1,11 @@
+import stripJsonComments from "strip-json-comments";
+
 function getJson(text) {
   let error = false;
   let json = null;
 
   try {
-    json = JSON.parse(text);
+    json = JSON.parse(stripJsonComments(text));
   } catch (err) {
     error = true;
   } finally {
@@ -17,7 +19,6 @@ function getJson(text) {
 function parseTheme(json) {
   let themeName = "";
   let themeType = "";
-  let themeColors = new Set();
   let themeScope = {};
   let themeScopeItem = {
     base: null,
@@ -37,7 +38,6 @@ function parseTheme(json) {
     Object.entries(json.colors).forEach((entry) => {
       const [key, value] = entry;
       themeScope[key] = { ...themeScopeItem, base: value };
-      themeColors.add(value);
     });
   }
 
@@ -50,6 +50,11 @@ function parseTheme(json) {
         entry.scope.forEach((key) => {
           themeScope[key] = { ...themeScopeItem, ...entry.settings };
         });
+      } else if (typeof entry.scope === "undefined" && entry.settings) {
+        Object.entries(entry.settings).forEach((entry) => {
+          const [key, value] = entry;
+          themeScope[`global.${key}`] = { ...themeScopeItem, base: value };
+        });
       }
     });
   }
@@ -57,7 +62,6 @@ function parseTheme(json) {
   return {
     themeName,
     themeType,
-    themeColors,
     themeScope,
   };
 }

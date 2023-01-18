@@ -8,7 +8,6 @@ class Editor {
 
     this.themeName = data.themeName;
     this.themeType = data.themeType;
-    this.themeColors = data.themeColors;
     this.themeScope = data.themeScope;
 
     this.hexCounter = 0;
