@@ -10,13 +10,13 @@ Generate Emacs and Vim theme from VS Code theme's json file.
 
 # Screenshots
 
-#### Make apps theme (original theme source: https://google.com)
+#### Make apps theme ([Link to original theme](https://marketplace.visualstudio.com/items?itemName=dannyconnell.make-apps-theme))
 ![themeforge - make apps theme](https://res.cloudinary.com/dur0cxkf0/image/upload/r_6/v1674029646/themeforge/themeforge-make-apps-theme_csfmgr.png "themeforge make apps theme")
 
-#### Bluloco Light Theme (original theme source: https://google.com)
+#### Bluloco Light Theme ([Link to original theme](https://marketplace.visualstudio.com/items?itemName=uloco.theme-bluloco-light))
 ![themeforge - bluloco light theme](https://res.cloudinary.com/dur0cxkf0/image/upload/r_6/v1674029646/themeforge/themeforge-bluloco-light-theme_ujssoi.png "themeforge make apps theme")
 
-#### Palenight Theme (original theme source: https://google.com)
+#### Palenight Theme ([Link to original theme](https://marketplace.visualstudio.com/items?itemName=whizkydee.material-palenight-theme))
 ![themeforge - palenight theme](https://res.cloudinary.com/dur0cxkf0/image/upload/r_6/v1674029646/themeforge/themeforge-palenight-theme_auwuqg.png "themeforge make apps theme")
 
 
