@@ -206,13 +206,13 @@ class Editor {
     });
 
     // render render render
-    let output = "\n";
+    let output = "";
     toRender.forEach((item) => {
       if (item.type === "face") {
         let result = this.renderFace(item.key, this.editorScope[item.key]);
-        output = result.length ? output + result + "\n" : output;
+        output = result.length ? output + result : output;
       } else if (item.type === "comment") {
-        output += `\n\n${this.commentPrefix}${item.description}\n`;
+        output += `\n\n\n${this.commentPrefix}${item.description}`;
       }
     });
 

@@ -58,12 +58,12 @@ endfun
 let s:hex = {}
 " Terminal colors dictionary (256)
 let s:bit = {}
-
 `;
 }
 
 function getFooter() {
   return `
+
 highlight link cStatement Statement
 highlight link cSpecial Special
 

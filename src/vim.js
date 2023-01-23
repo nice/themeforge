@@ -43,7 +43,7 @@ class Vim extends Editor {
       } else return `""`;
     };
 
-    output = `call s:h("${key}", ${_getHexKey(background)}, ${_getHexKey(
+    output = `\ncall s:h("${key}", ${_getHexKey(background)}, ${_getHexKey(
       foreground
     )}, ${_getBitKey(background)}, ${_getBitKey(foreground)}, "none")`;
 
@@ -55,17 +55,17 @@ class Vim extends Editor {
 
     Object.entries(this.hexColorMap).forEach((entry) => {
       let [hex, colorName] = entry;
-      vars += `let s:hex.${colorName}="${hex}"\n`;
+      vars += `\nlet s:hex.${colorName}="${hex}"`;
     });
 
-    vars += "\n\n";
+    vars += "\n";
 
     Object.entries(this.bitColorMap).forEach((entry) => {
       let [hex, colorName] = entry;
-      vars += `let s:bit.${colorName}="${hex}"\n`;
+      vars += `\nlet s:bit.${colorName}="${hex}"`;
     });
 
-    let output = `\n${vars}`;
+    let output = `${vars}`;
     return output;
   }
 

@@ -38,7 +38,7 @@ class Emacs extends Editor {
       output += `:foreground ,${this.getHexKey(foreground)} `;
     if (fontStyle.length) output += `:fontStyle ${fontStyle} `;
 
-    output = `\`(${key} ((t (${output}))))`;
+    output = `\n\`(${key} ((t (${output}))))`;
 
     return output;
   }
@@ -48,10 +48,10 @@ class Emacs extends Editor {
 
     Object.entries(this.hexColorMap).forEach((entry) => {
       let [hex, colorName] = entry;
-      vars += `(${colorName} "${hex}")\n`;
+      vars += `\n(${colorName} "${hex}")`;
     });
 
-    let output = `\n(let (\n${vars})\n\n`;
+    let output = `\n(let (${vars})\n\n`;
     return output;
   }
 
