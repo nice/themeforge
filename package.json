@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "clipboard": "^2.0.11",
-    "file-saver": "^2.0.5"
+    "file-saver": "^2.0.5",
+    "strip-json-comments": "^5.0.1"
   }
 }
